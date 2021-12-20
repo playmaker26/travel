@@ -1,0 +1,803 @@
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  line-height: 1;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+/* change colours to suit your needs */
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* change border colour to suit your needs */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input,
+select {
+  vertical-align: middle;
+}
+
+/*My code*/
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #87ceeb;
+  font-family: Sansita;
+  overflow: auto;
+}
+
+.loader {
+  background-image: url(loader/travel.gif);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+}
+/*home page navbar*/
+
+nav {
+  width: 100%;
+  background-color: #f9d71c;
+  height: 100px;
+}
+
+nav .logo-links {
+  display: block;
+  width: 100px;
+  height: 100px;
+}
+
+nav .logo-links .img-logo {
+  display: block;
+  width: 100px;
+  height: 100px;
+}
+
+nav .box {
+  position: relative;
+  display: block;
+  bottom: 100px;
+  float: right;
+  border: 2px solid green;
+  height: 80px;
+  width: 90px;
+  border-radius: 50%;
+  margin: 1em;
+}
+
+nav .box.open {
+  border: 1px solid red;
+  transition: 0.5s ease-in-out;
+}
+
+nav .box .line {
+  width: 50px;
+  height: 6px;
+  background-color: #fff;
+  border-radius: 3px;
+  transition: 0.5s ease-in-out;
+  margin: 40% auto;
+}
+
+nav .box .line::before,
+nav .box .line::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 6px;
+  background-color: #fff;
+  border-radius: 3px;
+  transition: 0.5s ease-in-out;
+  top: 35px;
+}
+
+nav .box .line::before {
+  transform: translateY(-16px);
+}
+
+nav .box .line::after {
+  transform: translateY(16px);
+}
+
+nav .box.open .line {
+  background: transparent;
+}
+
+nav .box.open .line::before {
+  transform: rotate(45deg);
+  background-color: red;
+}
+
+nav .box.open .line::after {
+  transform: rotate(-45deg);
+  background-color: red;
+}
+
+nav .main-ul {
+  position: absolute;
+  top: 100px;
+  right: 0;
+  padding: 10px;
+  width: 40%;
+  background-color: #f9d71c;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+}
+
+nav .main-ul .main-li {
+  margin: 8px;
+  display: block;
+}
+
+nav .main-ul .main-li .main-links {
+  text-decoration: none;
+  color: #006994;
+  font-size: 20px;
+}
+
+.banner {
+  width: 100%;
+  height: calc(100vh - 100px);
+  background-image: url(img/banner.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: table;
+}
+
+.banner .text {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.banner .text .main {
+  text-align: center;
+  color: #fff;
+  font-size: 42px;
+  text-shadow: 2px 2px #000;
+  margin-bottom: 20px;
+}
+
+.banner .text .sub {
+  text-align: center;
+  color: #fff;
+  font-size: 22px;
+  text-shadow: 2px 2px #000;
+}
+
+.mid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mid .mid-intro {
+  text-align: center;
+  color: #fff;
+  font-size: 22px;
+  text-shadow: 2px 2px #000;
+  margin-bottom: 100px;
+  margin-top: 25px;
+}
+
+.mid .pic-1 {
+  width: 360px;
+}
+
+.mid .pic-1-title {
+  text-align: center;
+  color: #fff;
+  font-size: 24px;
+  text-shadow: 2px 2px #000;
+  margin-bottom: 25px;
+}
+
+.mid .pic-2 {
+  width: 360px;
+}
+
+.mid .pic-2-title {
+  text-align: center;
+  color: #fff;
+  font-size: 24px;
+  text-shadow: 2px 2px #000;
+  margin-bottom: 25px;
+}
+
+.mid .pic-3 {
+  width: 360px;
+}
+
+.mid .pic-3-title {
+  text-align: center;
+  color: #fff;
+  font-size: 24px;
+  text-shadow: 2px 2px #000;
+  margin-bottom: 25px;
+}
+
+.mid .p-end {
+  text-align: center;
+  color: #fff;
+  font-size: 24px;
+  text-shadow: 2px 2px #000;
+  margin-bottom: 25px;
+}
+
+/*Travel page*/
+
+.welcome {
+  margin: 30px auto;
+}
+
+.welcome .p-travel {
+  font-size: 32px;
+  color: #fff;
+  text-shadow: 2px 2px #000;
+}
+
+.travel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 300px;
+  padding: 30px;
+  background-color: #fff;
+  margin: 30px auto;
+}
+
+.travel .error {
+  color: red;
+  font-size: 15px;
+}
+
+.travel .input-name {
+  margin-bottom: 30px;
+}
+
+.travel .input-name .name-input {
+  border-radius: 2px;
+}
+
+.travel .input-passanger {
+  margin-bottom: 30px;
+}
+
+.travel .input-passanger .group {
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+
+.travel .input-passanger .group .adult-input {
+  border-radius: 2px;
+}
+
+.travel .input-passanger .group .up {
+  font-size: 15px;
+  margin-left: 10px;
+  display: none;
+  float: right;
+}
+
+.travel .input-passanger .group .down {
+  font-size: 15px;
+  margin-left: 10px;
+  float: right;
+}
+
+.travel .input-passanger .group .up,
+.down:hover {
+  cursor: pointer;
+}
+
+.travel .input-passanger .group .child-input {
+  border-radius: 2px;
+  display: none;
+}
+
+.travel .input-passanger .group .infant-input {
+  border-radius: 2px;
+  display: none;
+}
+
+.travel .country {
+  width: 150px;
+  margin-bottom: 15px;
+}
+
+.travel .payment .method .pay-method {
+  float: left;
+  width: 100px;
+}
+
+.travel .payment .method .radio {
+  float: left;
+  width: 20px;
+  margin-right: 10px;
+}
+
+.travel .payment .method .pay-method,
+.radio {
+  margin-top: 15px;
+}
+
+.travel .book {
+  margin: 30px auto;
+  padding-right: 90px;
+  padding-left: 90px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #87ceeb;
+  font-size: 18px;
+}
+
+.travel .subject .input-subject {
+  border-radius: 2px;
+}
+
+.travel .message {
+  margin-top: 30px;
+}
+
+.travel .message .marea {
+  resize: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer {
+  margin-top: auto;
+  background-color: #f9d71c;
+  padding: 2em;
+}
+
+@media only screen and (min-width: 768px) {
+  nav .main-ul {
+    position: absolute;
+    top: 100px;
+    right: 0;
+    padding: 10px;
+    width: 30%;
+    background-color: #f9d71c;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+  }
+
+  .mid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "intro intro" "pic1 title1" " title2 pic2" "pic3 title3 " "pend pend";
+  }
+
+  .mid .mid-intro {
+    grid-area: intro;
+  }
+
+  .mid .pic-1 {
+    grid-area: pic1;
+  }
+
+  .mid .pic-1-title {
+    grid-area: title1;
+  }
+
+  .mid .pic-2 {
+    grid-area: pic2;
+  }
+
+  .mid .pic-2-title {
+    grid-area: title2;
+  }
+
+  .mid div .pic-3 {
+    grid-area: pic3;
+  }
+
+  .mid .pic-3-title {
+    grid-area: title3;
+  }
+
+  .mid .p-end {
+    grid-area: pend;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  nav .box {
+    position: relative;
+    display: none;
+    bottom: 100px;
+    float: right;
+    border: 2px solid green;
+    height: 80px;
+    width: 90px;
+    border-radius: 50%;
+    margin: 1em;
+  }
+
+  nav .main-ul {
+    position: absolute;
+    top: 100px;
+    right: 0;
+    top: 25px;
+    padding: 10px;
+    width: 40%;
+    background-color: #f9d71c;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    opacity: 1;
+    transition: 0.5s ease-in-out;
+  }
+
+  .mid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "intro intro" "pic1 title1" " title2 pic2" "pic3 title3 " "pend pend";
+  }
+
+  .mid .mid-intro {
+    grid-area: intro;
+  }
+
+  .mid div .pic-1 {
+    grid-area: pic1;
+  }
+
+  .mid .pic-1-title {
+    grid-area: title1;
+  }
+
+  .mid .pic-2 {
+    grid-area: pic2;
+  }
+
+  .mid .pic-2-title {
+    grid-area: title2;
+  }
+
+  .mid div .pic-3 {
+    grid-area: pic3;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .mid .pic-3-title {
+    grid-area: title3;
+  }
+
+  .mid .p-end {
+    grid-area: pend;
+  }
+}
+
+@media only screen and (min-width: 731px) {
+  .mid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "intro intro" "pic1 title1" " title2 pic2" "pic3 title3 " "pend pend";
+  }
+
+  .mid .mid-intro {
+    grid-area: intro;
+  }
+
+  .mid .pic-1 {
+    grid-area: pic1;
+  }
+
+  .mid .pic-1-title {
+    grid-area: title1;
+  }
+
+  .mid .pic-2 {
+    grid-area: pic2;
+  }
+
+  .mid .pic-2-title {
+    grid-area: title2;
+  }
+
+  .mid div .pic-3 {
+    grid-area: pic3;
+    width: 100%;
+    max-width: 768px;
+  }
+
+  .mid .pic-3-title {
+    grid-area: title3;
+  }
+
+  .mid .p-end {
+    grid-area: pend;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .mid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "intro intro" "pic1 title1" " title2 pic2" "pic3 title3 " "pend pend";
+  }
+
+  .mid .mid-intro {
+    grid-area: intro;
+  }
+
+  .mid div .pic-1 {
+    grid-area: pic1;
+  }
+
+  .mid .pic-1-title {
+    grid-area: title1;
+  }
+
+  .mid .pic-2 {
+    grid-area: pic2;
+  }
+
+  .mid .pic-2-title {
+    grid-area: title2;
+  }
+
+  .mid div .pic-3 {
+    grid-area: pic3;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .mid .pic-3-title {
+    grid-area: title3;
+  }
+
+  .mid .p-end {
+    grid-area: pend;
+  }
+}
+
+@media only screen and (max-width: 280px) {
+  .mid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mid .mid-intro {
+    text-align: center;
+    color: #fff;
+    font-size: 22px;
+    text-shadow: 2px 2px #000;
+    margin-bottom: 100px;
+    margin-top: 25px;
+  }
+
+  .mid .pic-1 {
+    width: 280px;
+  }
+
+  .mid .pic-1-title {
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+    text-shadow: 2px 2px #000;
+    margin-bottom: 25px;
+  }
+
+  .mid .pic-2 {
+    width: 280px;
+  }
+
+  .mid .pic-2-title {
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+    text-shadow: 2px 2px #000;
+    margin-bottom: 25px;
+  }
+
+  .mid .pic-3 {
+    width: 280px;
+  }
+
+  .mid .pic-3-title {
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+    text-shadow: 2px 2px #000;
+    margin-bottom: 25px;
+  }
+
+  .travel {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 270px;
+    padding: 30px;
+    background-color: #fff;
+    margin: 30px auto;
+  }
+}
